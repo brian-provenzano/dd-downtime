@@ -2,6 +2,8 @@ cloud.google.com/go v0.34.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMT
 github.com/DataDog/datadog-api-client-go v1.0.0-beta.11 h1:4qrBOSR5gAb3XOdQIymgcS6fzanPBBjkrFfVFW23qCo=
 github.com/DataDog/datadog-api-client-go v1.0.0-beta.11/go.mod h1:/bMeu+q33QzX2JuO5PkGkhU1VYOXIXKEPF6Ck4yR06M=
 github.com/DataDog/datadog-go v3.6.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
+github.com/akamensky/argparse v1.2.2 h1:P17T0ZjlUNJuWTPPJ2A5dM1wxarHgHqfYH+AZTo2xQA=
+github.com/akamensky/argparse v1.2.2/go.mod h1:S5kwC7IuDcEr5VeXtGPRVZ5o/FdhcMlQz4IZQuw64xA=
 github.com/aslakhellesoy/gox v1.0.100/go.mod h1:AJl542QsKKG96COVsv0N74HHzVQgDIQPceVUh1aeU2M=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/cucumber/gherkin-go/v13 v13.0.0/go.mod h1:pzMEPEIPcPOBDkE8HaWC+Ck6eDBtBmIWVksUkSin/2E=
