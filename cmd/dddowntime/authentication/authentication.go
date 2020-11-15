@@ -10,10 +10,10 @@ import (
 )
 
 //DDApiKey name of dd api env var
-const DDApiKey string = "DDAPI_KEY"
+const DDApiKey string = "DATADOG_API_KEY"
 
 //DDAppKey name of dd app env var
-const DDAppKey string = "DDAPP_KEY"
+const DDAppKey string = "DATADOG_APP_KEY"
 
 /*
 Authenticate - authenticate against DD API service
