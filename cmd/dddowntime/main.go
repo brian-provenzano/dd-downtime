@@ -25,34 +25,34 @@ func main() {
 	listCmd := parser.NewCommand("get", "List all the current Datadog downtimes")
 
 	createCmd := parser.NewCommand("create", "Creates / Schedules the Datadog downtime")
-	createCmdScope := createCmd.String("s", "scope", 
+	createCmdScope := createCmd.String("s", "scope",
 		&argparse.Options{
 			Required: true,
-			Help: "Existing datadog scope tag(s) - e.g. 'environment:prd1,service:voice-platform' (required)"
+			Help:     "Existing datadog scope tag(s) - e.g. 'environment:prd1,service:voice-platform' (required)",
 		})
 	createCmdTime := createCmd.Int("t", "time",
 		&argparse.Options{
 			Required: true,
-			Help: "Downtime 'time' to set in minutes (required)"
+			Help:     "Downtime 'time' to set in minutes (required)",
 		})
 	createCmdMessage := createCmd.String("m", "message",
 		&argparse.Options{
 			Required: false,
-			Help:     "Existing datadog scope tag(s) - e.g. 'environment:prd1,service:voice-platform' (required)"
+			Help:     "Existing datadog scope tag(s) - e.g. 'environment:prd1,service:voice-platform' (required)",
 		})
 
 	updateCmd := parser.NewCommand("update", "Updates the Datadog downtime with the provided ID")
-	updateCmdId := updateCmd.Int("i", "id", 
+	updateCmdId := updateCmd.Int("i", "id",
 		&argparse.Options{
 			Required: false,
-			Help: "The ID of the Datadog downtime to update (required)"
+			Help:     "The ID of the Datadog downtime to update (required)",
 		})
 
 	deleteCmd := parser.NewCommand("delete", "Deletes the Datadog downtime with the provided ID")
-	deleteCmdId := deleteCmd.Int("i", "id", 
+	deleteCmdId := deleteCmd.Int("i", "id",
 		&argparse.Options{
 			Required: false,
-			Help: "The ID of the Datadog downtime to update (required)"
+			Help:     "The ID of the Datadog downtime to update (required)",
 		})
 
 	// Boilerplate: Parse command line arguments and in case of any error print error and help information
