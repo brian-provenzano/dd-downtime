@@ -12,15 +12,16 @@ func main() {
 
 	ctx, apiClient := authentication.Authenticate()
 
-	dashboardID := "<DASHBOARD_ID>"
-
-	resp, r, err := apiClient.DashboardsApi.GetDashboard(ctx, dashboardID).Execute()
+	resp, r, err := apiClient.DowntimesApi.ListDowntimes(ctx).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DashboardsApi.GetDashboard`: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ListDowntimes`: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 		log.Fatal("ERROR")
 	}
 
-	fmt.Fprintf(os.Stdout, "Response from `DashboardsApi.GetDashboard`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Response from `ListDowntimes`: %v\n", resp)
 
+	for i, s := range resp {
+		fmt.Println(i, s.GetActive(), s.GetMessage())
+	}
 }
