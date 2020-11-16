@@ -9,7 +9,7 @@ import (
 	"github.com/brian-provenzano/dd-downtime/authentication"
 )
 
-//Default downtime message if none is provided
+//DefaultDowntimeMessage - Default downtime message if none is provided
 const DefaultDowntimeMessage string = "Downtime scheduled by CEPSRE"
 
 func main() {
@@ -42,14 +42,14 @@ func main() {
 		})
 
 	updateCmd := parser.NewCommand("update", "Updates the Datadog downtime with the provided ID")
-	updateCmdId := updateCmd.Int("i", "id",
+	updateCmdID := updateCmd.Int("i", "id",
 		&argparse.Options{
 			Required: false,
 			Help:     "The ID of the Datadog downtime to update (required)",
 		})
 
 	deleteCmd := parser.NewCommand("delete", "Deletes the Datadog downtime with the provided ID")
-	deleteCmdId := deleteCmd.Int("i", "id",
+	deleteCmdID := deleteCmd.Int("i", "id",
 		&argparse.Options{
 			Required: false,
 			Help:     "The ID of the Datadog downtime to update (required)",
@@ -95,12 +95,12 @@ func main() {
 	case updateCmd.Happened():
 		//TODO - stub
 		fmt.Println("This would run update based on ID flag and other parameters (scope, message, endtime etc)")
-		fmt.Fprintf(os.Stderr, "id for update: %d\n", *updateCmdId)
+		fmt.Fprintf(os.Stderr, "id for update: %d\n", *updateCmdID)
 
 	case deleteCmd.Happened():
 		//TODO - stub
 		fmt.Println("This would run delete based on ID flag and other parameters (scope, message, endtime etc)")
-		fmt.Fprintf(os.Stderr, "id for delete: %d\n", *deleteCmdId)
+		fmt.Fprintf(os.Stderr, "id for delete: %d\n", *deleteCmdID)
 	}
 
 }
