@@ -20,9 +20,6 @@ Authenticate - authenticate against DD API service
 */
 func Authenticate() (context.Context, *datadog.APIClient) {
 
-	//fmt.Fprintf(os.Stderr, "apikey: %v\n", os.Getenv(DDApiKey))
-	//fmt.Fprintf(os.Stderr, "appkey: %v\n", os.Getenv(DDAppKey))
-
 	ctx := context.WithValue(
 		context.Background(),
 		datadog.ContextAPIKeys,
@@ -43,10 +40,10 @@ func Authenticate() (context.Context, *datadog.APIClient) {
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when validating the DD auth keys: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpResponse)
-		log.Fatal("ERROR") //clean this up
+		log.Fatal("\n--\nERROR Validating the API Call - check your env variables DATADOG_API_KEY and DATADOG_APP_KEY are set and are valid!") //clean this up
 	}
 
-	fmt.Fprintf(os.Stdout, "API Call Validated\n\n")
+	//fmt.Fprintf(os.Stdout, "API Call Validated\n\n")
 
 	return ctx, apiClient
 
